@@ -1,9 +1,13 @@
-Please add the following images to this folder:
+Required images for the portfolio:
+
+✅ Added:
 - michelle-1.png (main hero image)
-- michelle-2.png (about section image)
-- born-to-die.jpg
-- sunday-morning.jpg
-- sane.jpg
-- almond-chai.jpg
-- pluviophile.jpg
-- hey-dear-heidi.jpg
+- born-to-die.png
+- sunday-morning-rewind.png
+- sane.png
+- almond-chai.png
+- pluviphile-song.png
+- hey-dear-heidi.png
+
+⚠️ Still needed:
+- michelle-2.jpg (about section image - performing/artistic photo)

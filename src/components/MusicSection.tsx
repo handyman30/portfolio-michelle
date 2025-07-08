@@ -22,7 +22,7 @@ const MusicSection = () => {
     {
       title: "Sunday Morning Rewind",
       year: "2023",
-      cover: "/assets/sunday-morning.png",
+      cover: "/assets/sunday-morning-rewind.png",
       spotify: "https://open.spotify.com/track/5R50iQvvZq0VwNgGQoUzIl",
       youtube: "https://www.youtube.com/watch?v=h6i_BGmUFJQ",
       featured: true,
@@ -44,7 +44,7 @@ const MusicSection = () => {
     {
       title: "Pluviophile Song",
       year: "2022",
-      cover: "/assets/pluviophile.png",
+      cover: "/assets/pluviophile-song.png",
       spotify: "https://open.spotify.com/track/2bKjnLjIIvP1StvhPjKNrG",
       youtube: "#",
     },
