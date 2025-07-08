@@ -20,20 +20,48 @@ const BookingSection = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Construct email body
-    const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Event Type: ${formData.eventType}
-Date: ${formData.date}
-Venue: ${formData.venue}
-Message: ${formData.message}
-    `;
-    
-    // Open email client with pre-filled content
-    window.location.href = `mailto:michelle.limanjae@gmail.com?subject=Booking Inquiry from ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mnnvkonr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          eventType: formData.eventType,
+          date: formData.date,
+          venue: formData.venue,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: "",
+          email: "",
+          eventType: "",
+          date: "",
+          venue: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -244,11 +272,49 @@ Message: ${formData.message}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full bg-accent text-black font-semibold py-4 rounded-lg hover:bg-yellow-400 transition-colors duration-200 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className={`w-full font-semibold py-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 ${
+                  isSubmitting 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-accent text-black hover:bg-yellow-400'
+                }`}
               >
-                <Send size={20} />
-                Send Booking Inquiry
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-black"></div>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Booking Inquiry
+                  </>
+                )}
               </motion.button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                >
+                  Thank you! Your booking inquiry has been sent successfully. We'll get back to you soon!
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+                >
+                  Sorry, there was an error sending your message. Please try again or email us directly at{' '}
+                  <a href="mailto:michelle.limanjae@gmail.com" className="underline">
+                    michelle.limanjae@gmail.com
+                  </a>
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>

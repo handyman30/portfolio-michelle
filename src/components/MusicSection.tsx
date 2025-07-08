@@ -25,7 +25,6 @@ const MusicSection = () => {
       cover: "/assets/sunday-morning-rewind.png",
       spotify: "https://open.spotify.com/track/5R50iQvvZq0VwNgGQoUzIl",
       youtube: "https://www.youtube.com/watch?v=h6i_BGmUFJQ",
-      featured: true,
     },
     {
       title: "Sane",
@@ -142,11 +141,6 @@ const MusicSection = () => {
                 <div className="p-4 bg-white">
                   <h3 className="font-semibold text-lg">{release.title}</h3>
                   <p className="text-gray-600">{release.year}</p>
-                  {release.featured && (
-                    <span className="inline-block mt-2 px-3 py-1 bg-accent text-black text-sm rounded-full font-medium">
-                      Featured
-                    </span>
-                  )}
                 </div>
               </div>
             </motion.div>
