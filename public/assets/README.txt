@@ -9,5 +9,4 @@ Required images for the portfolio:
 - pluviphile-song.png
 - hey-dear-heidi.png
 
-⚠️ Still needed:
-- michelle-2.jpg (about section image - performing/artistic photo)
+✅ All images added! Portfolio is complete.
