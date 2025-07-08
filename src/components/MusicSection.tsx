@@ -15,14 +15,14 @@ const MusicSection = () => {
     {
       title: "Born To Die",
       year: "2024",
-      cover: "https://i.scdn.co/image/ab67616d0000b2730c8ac83035e9588e8ad34b90",
+      cover: "https://i.scdn.co/image/ab67616d00001e020c8ac83035e9588e8ad34b90",
       spotify: "https://open.spotify.com/track/2Ey4KW9BUslbeFdcIteMG9",
       youtube: "#",
     },
     {
       title: "Sunday Morning Rewind",
-      year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d0000b273d7083ed5fc55e5bb8d3af47f",
+      year: "2023",
+      cover: "https://i.scdn.co/image/ab67616d00001e02d7083ed5fc55e5bb8d3af47f",
       spotify: "https://open.spotify.com/track/1sHCfFTKm2UmIIogtmslUE",
       youtube: "https://www.youtube.com/watch?v=h6i_BGmUFJQ",
       featured: true,
@@ -30,28 +30,28 @@ const MusicSection = () => {
     {
       title: "Sane",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d0000b273e87fcd4469c31b0863dc49f1",
+      cover: "https://i.scdn.co/image/ab67616d00001e02e87fcd4469c31b0863dc49f1",
       spotify: "https://open.spotify.com/track/5k1ACx7gQtA9dPJOetH9sP",
       youtube: "#",
     },
     {
       title: "Almond Chai",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d0000b273c2c5eca8b9be0c2c1eeb6116",
+      cover: "https://i.scdn.co/image/ab67616d00001e02c2c5eca8b9be0c2c1eeb6116",
       spotify: "https://open.spotify.com/track/1MbdbQxCRvZ1qqtqPvUjJP",
       youtube: "#",
     },
     {
       title: "Pluviophile Song",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d0000b273177e1b5e4d5e4ada4c037709",
+      cover: "https://i.scdn.co/image/ab67616d00001e02177e1b5e4d5e4ada4c037709",
       spotify: "https://open.spotify.com/track/1V4jC0vJ5525lEF1bFgPX2",
       youtube: "#",
     },
     {
       title: "Hey Dear Heidi",
       year: "2021",
-      cover: "https://i.scdn.co/image/ab67616d0000b2731cddc054d7f29c91fb1f4844",
+      cover: "https://i.scdn.co/image/ab67616d00001e021cddc054d7f29c91fb1f4844",
       spotify: "https://open.spotify.com/track/1PcOIrzDua4tQqOsmNRxPW",
       youtube: "#",
     },
@@ -91,7 +91,7 @@ const MusicSection = () => {
             </div>
             <div className="p-6 bg-gradient-to-r from-gray-900 to-black">
               <h3 className="text-2xl font-bold text-white mb-2">Sunday Morning Rewind</h3>
-              <p className="text-gray-300">Official Music Video • 2022</p>
+              <p className="text-gray-300">Official Music Video • 2023</p>
             </div>
           </div>
         </motion.div>
@@ -113,6 +113,7 @@ const MusicSection = () => {
                     alt={release.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-4">
@@ -161,7 +162,7 @@ const MusicSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">Available on all streaming platforms</p>
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-6 flex-wrap">
             <a
               href="https://open.spotify.com/artist/5K55BGvBnx6VqKgrzKY5Hn"
               target="_blank"
