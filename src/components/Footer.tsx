@@ -35,7 +35,7 @@ const Footer = () => {
               <Youtube size={24} />
             </a>
             <a
-              href="https://open.spotify.com/artist/5K55BGvBnx6VqKgrzKY5Hn"
+              href="https://open.spotify.com/artist/0wT6VYTDxvlMKaRuNUs1M3"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 p-3 rounded-full hover:bg-accent hover:text-black transition-all duration-200"

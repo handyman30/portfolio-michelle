@@ -133,4 +133,3 @@ For any questions about the website, please contact the developer.
 ---
 
 Made with ❤️ for Michelle Limanjae
-# portfolio-michelle

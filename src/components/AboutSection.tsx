@@ -32,14 +32,12 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-              <Image
-                src="/assets/michelle-2.png"
-                alt="Michelle Limanjae performing"
-                fill
-                className="object-cover"
-              />
+            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-gray-200">
+              {/* Temporary placeholder - replace with actual image */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-gray-400 text-lg">Add michelle-2.jpg to public/assets/</p>
+              </div>
               <div className="absolute bottom-8 left-8 text-white">
                 <p className="text-2xl font-bold mb-2">Michelle Limanjae</p>
                 <p className="text-lg">Jakarta, Indonesia</p>

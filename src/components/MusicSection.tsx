@@ -15,51 +15,45 @@ const MusicSection = () => {
     {
       title: "Born To Die",
       year: "2024",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/2Ey4KW9BUslbeFdcIteMG9",
+      cover: "/assets/born-to-die.png",
+      spotify: "https://open.spotify.com/track/0lTBggjC4kPgT0w7YrIrIK",
       youtube: "#",
-      bgColor: "bg-red-100",
     },
     {
       title: "Sunday Morning Rewind",
       year: "2023",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/1sHCfFTKm2UmIIogtmslUE",
+      cover: "/assets/sunday-morning.png",
+      spotify: "https://open.spotify.com/track/5R50iQvvZq0VwNgGQoUzIl",
       youtube: "https://www.youtube.com/watch?v=h6i_BGmUFJQ",
       featured: true,
-      bgColor: "bg-yellow-100",
     },
     {
       title: "Sane",
       year: "2022",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/5k1ACx7gQtA9dPJOetH9sP",
+      cover: "/assets/sane.png",
+      spotify: "https://open.spotify.com/track/6kZHth1VyEDwpKJe4n2Lza",
       youtube: "#",
-      bgColor: "bg-purple-100",
     },
     {
       title: "Almond Chai",
       year: "2022",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/1MbdbQxCRvZ1qqtqPvUjJP",
+      cover: "/assets/almond-chai.png",
+      spotify: "https://open.spotify.com/track/4XDrY5CPqWT0xSVl2bBJvt",
       youtube: "#",
-      bgColor: "bg-orange-100",
     },
     {
       title: "Pluviophile Song",
       year: "2022",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/1V4jC0vJ5525lEF1bFgPX2",
+      cover: "/assets/pluviophile.png",
+      spotify: "https://open.spotify.com/track/2bKjnLjIIvP1StvhPjKNrG",
       youtube: "#",
-      bgColor: "bg-blue-100",
     },
     {
       title: "Hey Dear Heidi",
       year: "2021",
-      cover: "/api/placeholder/300/300",
-      spotify: "https://open.spotify.com/track/1PcOIrzDua4tQqOsmNRxPW",
+      cover: "/assets/hey-dear-heidi.png",
+      spotify: "https://open.spotify.com/track/6K1p0yQksuSBLnoomHmGwT",
       youtube: "#",
-      bgColor: "bg-green-100",
     },
   ];
 
@@ -76,7 +70,6 @@ const MusicSection = () => {
             <span className="text-accent">DISCOGRAPHY</span>
           </h2>
           <p className="text-xl text-gray-600">6 Releases • Alternative Soul Rock</p>
-          <p className="text-sm text-gray-500 mt-2">83 monthly listeners on Spotify</p>
         </motion.div>
 
         {/* Featured Video */}
@@ -98,7 +91,7 @@ const MusicSection = () => {
             </div>
             <div className="p-6 bg-gradient-to-r from-gray-900 to-black">
               <h3 className="text-2xl font-bold text-white mb-2">Sunday Morning Rewind</h3>
-              <p className="text-gray-300">Official Music Video • 2023</p>
+              <p className="text-gray-300">Official Music Video • 2022</p>
             </div>
           </div>
         </motion.div>
@@ -114,13 +107,13 @@ const MusicSection = () => {
               className="group"
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <div className={`aspect-square relative ${release.bgColor}`}>
-                  {/* Placeholder design for album covers */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className="w-24 h-24 bg-white/50 rounded-full mb-4" />
-                    <h4 className="text-xl font-bold text-gray-800 text-center">{release.title}</h4>
-                    <p className="text-gray-600">{release.year}</p>
-                  </div>
+                <div className="aspect-square relative bg-gray-200">
+                  <Image
+                    src={release.cover}
+                    alt={release.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-4">
                       <a
@@ -168,9 +161,9 @@ const MusicSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-lg text-gray-600 mb-6">Available on all streaming platforms</p>
-          <div className="flex justify-center gap-6 flex-wrap">
+          <div className="flex justify-center gap-6">
             <a
-              href="https://open.spotify.com/artist/5K55BGvBnx6VqKgrzKY5Hn"
+              href="https://open.spotify.com/artist/0wT6VYTDxvlMKaRuNUs1M3"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2"
@@ -185,10 +178,10 @@ const MusicSection = () => {
               className="px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors flex items-center gap-2"
             >
               <Play size={20} />
-              YouTube Music
+              YouTube
             </a>
             <a
-              href="https://music.apple.com/artist/michelle-limanjae/1534833641"
+              href="https://music.apple.com/artist/michelle-limanjae/1538064283"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center gap-2"
