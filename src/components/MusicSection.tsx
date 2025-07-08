@@ -15,45 +15,51 @@ const MusicSection = () => {
     {
       title: "Born To Die",
       year: "2024",
-      cover: "https://i.scdn.co/image/ab67616d00001e020c8ac83035e9588e8ad34b90",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/2Ey4KW9BUslbeFdcIteMG9",
       youtube: "#",
+      bgColor: "bg-red-100",
     },
     {
       title: "Sunday Morning Rewind",
       year: "2023",
-      cover: "https://i.scdn.co/image/ab67616d00001e02d7083ed5fc55e5bb8d3af47f",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/1sHCfFTKm2UmIIogtmslUE",
       youtube: "https://www.youtube.com/watch?v=h6i_BGmUFJQ",
       featured: true,
+      bgColor: "bg-yellow-100",
     },
     {
       title: "Sane",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d00001e02e87fcd4469c31b0863dc49f1",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/5k1ACx7gQtA9dPJOetH9sP",
       youtube: "#",
+      bgColor: "bg-purple-100",
     },
     {
       title: "Almond Chai",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d00001e02c2c5eca8b9be0c2c1eeb6116",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/1MbdbQxCRvZ1qqtqPvUjJP",
       youtube: "#",
+      bgColor: "bg-orange-100",
     },
     {
       title: "Pluviophile Song",
       year: "2022",
-      cover: "https://i.scdn.co/image/ab67616d00001e02177e1b5e4d5e4ada4c037709",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/1V4jC0vJ5525lEF1bFgPX2",
       youtube: "#",
+      bgColor: "bg-blue-100",
     },
     {
       title: "Hey Dear Heidi",
       year: "2021",
-      cover: "https://i.scdn.co/image/ab67616d00001e021cddc054d7f29c91fb1f4844",
+      cover: "/api/placeholder/300/300",
       spotify: "https://open.spotify.com/track/1PcOIrzDua4tQqOsmNRxPW",
       youtube: "#",
+      bgColor: "bg-green-100",
     },
   ];
 
@@ -70,6 +76,7 @@ const MusicSection = () => {
             <span className="text-accent">DISCOGRAPHY</span>
           </h2>
           <p className="text-xl text-gray-600">6 Releases • Alternative Soul Rock</p>
+          <p className="text-sm text-gray-500 mt-2">83 monthly listeners on Spotify</p>
         </motion.div>
 
         {/* Featured Video */}
@@ -107,14 +114,13 @@ const MusicSection = () => {
               className="group"
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <div className="aspect-square relative bg-gray-200">
-                  <Image
-                    src={release.cover}
-                    alt={release.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    unoptimized
-                  />
+                <div className={`aspect-square relative ${release.bgColor}`}>
+                  {/* Placeholder design for album covers */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    <div className="w-24 h-24 bg-white/50 rounded-full mb-4" />
+                    <h4 className="text-xl font-bold text-gray-800 text-center">{release.title}</h4>
+                    <p className="text-gray-600">{release.year}</p>
+                  </div>
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-4">
                       <a
